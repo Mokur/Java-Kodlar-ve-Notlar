@@ -1,0 +1,81 @@
+
+
+
+
+29.09.19  ---  JAVA 1.DERS
+--------------------------
+
+
+#Ide'ler: Intellij, Eclipse, Netbeans
+
+#text editörlerde de kod yazýlabilir fakat ide'lerde olan run yoktur bu yüzden çalýþtýrýlamaz
+
+#jre: java runtime environment, bir kez yaz her makinede çalýþsýn 
+
+#jvm: bilgisayarýn java uygulamalarýný çalýþtýrabilmek için gerekli oolan yazýlým. arka tarafta çalýþan sanal makine
+
+#sdk: yazýlým geliþtirme kiti
+
+#jar: java archive sýkýþtýrýlmýþ java paketleri
+
+
+#JAVANIN ARTILARI
+-Platform baðýmsýz, her iþletim sisteminde çalýþabilmesi ve hepsi için birdefa kodlarýnýn yazýlmasý yeterli
+-Open Source-Açýk Kaynak
+-Ücretsiz
+-OOP desteklidir.
+
+
+#java Swing/Java FX --> Masaüstü programlama için 
+
+
+#  .java dosyasý gördüðümüz dosya 
+   .class (run)--> bilgisayarýn anladýðý, .java buna dönüþtürülür
+   .dex --> makinenin anladýðý
+
+
+
+#(java decompile):  .dex -> .class -> .java
+
+# java kaynaklarý: 
+-tutorialspoint
+-javatpoint
+
+#haftaya javatpointteki control statements kýsmýndaki konularý görücez
+
+
++Java Syntax (Yazýlým Dili Kurallarý)
+
+-Class ismi büyük harf ile baþlamalýdýr(proje isminde zorunlu deðil) (Program küçükharfle baþlayaný deðiþken, büyük harfle baþlayaný class olarak algýlar)
+-deðiþken ismi küçük harfle baþlar
+-Boþluk içermemelidir.
+-Türkçe karakter kullanýlmamalýdýr.
+-Sayý ile baþlamaz
+-Özel karakter içermemelidir(_ hariç)
+-java dosyasýnýn ismiyle class ismi ayný olmalýdýr.
+-büyük harf küçük harf ayrýmý vardýr.
+- artýnýn öncesi ve sonrasý int ise toplar, artý öncesi ya da sonrasý string ise birleþtirir
+
+##yazý fontu büyütme:
+window -> preferences -> colors and fonts ->  Java editor text font çift týklayýp ordan deðiþtirebilirsin ayarlarý.
+
+# } -> scope 
+
+# metodlarda parantezler olur
+
+# deðiþken(variable): ram bellekte geçici olarak veri tutan yapýlardýr
+
+# data type - veri tipleri: String(referans veri tipi), diðerleri basit veri tipi: int, char, boolean, float, long, double, byte, short
+
+# short - numeric
+# boolean - logical
+# char - character
+# int - numeric
+# float - numeric
+# byte - numeric
+# double - numeric
+# long - numeric
+#String - object
+
+
+# system.out.println kýsayolu --> syso yazýp ctrl ve space'e basmak
