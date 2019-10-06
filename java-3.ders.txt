@@ -1,0 +1,49 @@
+
+
+
+JAVA PROGRAMLAMA --- 3.DERS
+06.10.2019
+-------------------------------------
+
+#  ctrl + shift + f ---> eclipste kodlarý düzenli temiz kod haline getiren özellik
+
+# math sýnýfý 
+
+
+# switch case'te case sadece bir veri bekler
+
+
+### haftaya --> dizi döngü hata yakalama exception handle 
+temel java sýnýflarý
+math sýnýfý
+random sýnýfý
+zaman ve tarih sýnýflarý
+foreach
+do while
+while
+
+
+## hata türlerini araþtýr
+## sql injection araþtýr
+
+
+#biz de hata türü üretebilyoruz
+
+# try : //hata oluþma ihtimali olan kodlarý yazdýðýmýz yer(hata alýndýðýnda normalde program patlar, try sayesinde çökmez program)
+			//try bloðu içerisine eklenen kodlar programýn akýþýna engel olmayacak þekilde devam etmesini saðlar
+			 //catch bloklarý ise olasý hatalarýn yakalandýðý kodlardýr
+# Birden fazla catch bloðu eklenebilir
+			 * tek þart catch bloklarýnýn sýnýf isimleri birbirinden farklý olmalýdýr(dublicate edilemez)
+			 * 
+			 * exception sýnýfý olabilecek tüm hatalarýn yakalanabildiði sýnýftýr
+eðer hata varsa catch bloðuna düþer
+
+#Aritmethic exception : bir sayýyý sýfýra bölme hatasý
+
+#StringIndexOutOfBoundsException: stringin olmayan deðerine eriþmeye çalýþmak
+
+# ArrayIndexOutOfBoundsException: dizilerde alýnan hata, yanlýþ indise ulaþmaya çalýþmak
+
+#NullPointerException : boþ deðer hatasý
+
+# exception'larý geliþtirici ihtimalleri düþünerek ekler, error 
