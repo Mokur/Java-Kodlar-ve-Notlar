@@ -1,0 +1,20 @@
+
+
+JAVA  ---  4.DERS
+12.10.2019
+-------------------------------
+
+# break : kýrmak,durdurmak amaçlý kullanýlan kod
+
+# continue : 
+
+
+# eðer tanýmlamayý döngünün içinde yaparsan döngü her döndüðünde deðeri kaybedersin bu yüzden dýþýnda tanýmlamalýsýn
+
+
+          *
+         ***
+        *****
+      *******
+### temel java sýnýflarý yarýn iþlenecek
+
