@@ -1,0 +1,262 @@
+
+
+
+
+JAVA  ---  5.DERS
+13.10.2019
+--------------------------------
+
+# Simple date format sýnýfýyla tarihi düzgünce getirebiliriz
+
+# Math sýnýfý:
+-PI: pi sayýýsý
+-E: e sayýsý
+-min: küçüðü getirir
+-max: büyüðü getirir
+-ceil: üst sayýya yuvarlar-floor: alt sayýya yuvarlar
+-round: 0.50 öncesini alt sayýya , 0.50 sonrasýný üst sayýya yuvarlar.
+-random: 0-1 arasý rastgele sayý üretir
+-abs: mutlak deðer
+-sqrt: karekök
+
+
+
+tarih sýnýflarý kodlar: 
+# LocalDate tarih = LocalDate.now();
+		System.out.println("Tarih: "+tarih.toString());
+		
+		int yil = tarih.getYear();
+		System.out.println("Yýl: " +yil);
+		
+		int ay = tarih.getMonthValue();
+		System.out.println("Ay: " +ay);
+		
+		int gun = tarih.getDayOfMonth();
+		System.out.println("Gün: " +gun);
+		
+		int yil_gun = tarih.getDayOfYear();
+		System.out.println("Yýlýn kaçýncý günü: " +yil_gun);
+		
+		DayOfWeek hafta_gun = tarih.getDayOfWeek();
+		System.out.println("Haftanýn kaçýncý günü: " +hafta_gun.getValue());
+		
+		System.out.println("----------");
+		
+		LocalDateTime dateTime = LocalDateTime.now();
+		System.out.println(dateTime.toString());
+		
+		int dt_yil = dateTime.getYear();
+		System.out.println("Yýl: " +dt_yil);
+		
+		int dt_ay = dateTime.getMonthValue();
+		System.out.println("Ay: " +dt_ay);
+		
+		int dt_gun = dateTime.getDayOfMonth();
+		System.out.println("Gün: " +dt_gun);
+		
+		
+		int dt_saat = dateTime.getHour();
+		System.out.println("Saat: " +dt_saat);
+		
+		int dt_dakika = dateTime.getMinute();
+		System.out.println("Dakika: " +dt_dakika);
+		
+		int dt_saniye = dateTime.getSecond();
+		System.out.println("Saniye: " +dt_saniye);
+		
+		int dt_miliSaniye = dateTime.getNano();
+		System.out.println("Milisaniye: " +dt_miliSaniye);
+		
+		Chronology kronoloji = dateTime.getChronology();
+		System.out.println("Kronolojik Takvim Türü: " +kronoloji.getCalendarType());
+
+		System.out.println("---------------");
+		
+		Calendar takvim = new GregorianCalendar();
+		System.out.println("Takvim Türü: " +takvim.getCalendarType());
+		System.out.println(takvim.getTime());
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm dd.MM.YYYY"); //10.13.2019
+		System.out.println("Tarih: "+sdf.format(takvim.getTime()));
+		System.out.println("Tarih: "+takvim.getTime());
+	}
+
+
+# StringBuilder: string birleþtirme iþlemi yapar
+
+
+# ctrl shift ve + - font büyütme küçültme
+
+
+
+
+####ÖNEMLÝ ÖRNEK
+
+
+import java.util.Scanner;
+
+public class Ornek10 {
+	
+	
+	public static int unlulerinSayisiniBul(String kelime) {
+		
+	
+		
+			String unluDizi[] = { "a", "e", "ý", "i", "o", "ö", "u", "ü" };
+			int sayac = 0;
+			for (int i = 0; i < kelime.length(); i++) {
+				for (int j = 0; j < unluDizi.length; j++) {
+					if (kelime.charAt(i) == unluDizi[j].charAt(0)) {
+						sayac++;
+					}
+				}
+
+			}
+			return sayac;
+		
+	}
+	
+	
+	
+	public static int sayilarinSayisiniBul(String kelime) {
+		String sayilar= "0123456789";
+		
+		int sayac=0;
+		
+		for (int i = 0; i < kelime.length(); i++) {
+			for (int j = 0; j < sayilar.length(); j++) {
+				if (kelime.charAt(i)==sayilar.charAt(j)) {
+					sayac++;
+				}
+			}
+		}
+		return sayac;
+	}
+	
+	
+	
+	
+	
+
+	public static void main(String[] args) {
+		// dýþarýdan kelime, kelimedeki ünlü harf sayýsýkontrol et
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Bir kelime giriniz: ");
+		String kelime = sc.next();
+		
+		unlulerinSayisiniBul(kelime);
+		
+		
+
+		
+		
+		//daha kýsa yolu
+		/*
+		 * String unluler = "aeýioöuü";
+		stringin direk charAt metodunu kullanýrsýn
+		 * 
+		 */
+		
+
+	}
+
+}
+
+
+
+####  küçükten büyüðe sýralama
+
+
+public class Ornek12 {
+
+	public static void main(String[] args) {
+		// küçükten büyüðe sýralama(sorting seletion algorithm)
+		
+		
+		int[] dizi = {5,70,9,140,3,74,0};
+		
+		int gecici = 0;
+		
+		
+		//tüm elemanlarý tek tek gezebilmek için ürettik
+		for (int i = 0; i < dizi.length; i++) {
+			
+			//bir önceki deðerle bir sonraki deðeri her zaman kýyaslayabilmek için
+			for (int j = i+1; j < dizi.length; j++) {
+				if (dizi[i]>dizi[j]) {
+					gecici = dizi[i];
+					dizi[i] = dizi[j];
+					dizi[j] = gecici;
+				}
+			}
+		}
+		
+		for (int i = 0; i < dizi.length; i++) {
+			System.out.print(dizi[i] +" ");
+		}
+		
+		
+		
+
+	}
+
+}
+
+
+
+
+
+#####önemli sýralama 
+
+
+
+
+
+public class Ornek12 {
+
+	public static void sirala(int[] dizi, char ch) {
+		//int[] dizi = {5,70,9,140,3,74,0};
+		
+		int gecici;
+		//tüm elemanlarý tek tek gezebilmek için ürettik
+		for (int i = 0; i < dizi.length; i++) {
+			//bir önceki deðerle bir sonraki deðeri her zaman kýyaslayabilmek için
+			for (int j = i+1; j < dizi.length; j++) {
+				if('>' == ch) {
+					if(dizi[i]>dizi[j]) {
+						gecici = dizi[i];
+						dizi[i] = dizi[j];
+						dizi[j] = gecici;
+					}
+				}else if('<' == ch) {
+					if(dizi[i]<dizi[j]) {
+						gecici = dizi[i];
+						dizi[i] = dizi[j];
+						dizi[j] = gecici;
+					}
+				}
+			}
+		}
+		
+		for (int i = 0; i < dizi.length; i++) {
+			System.out.print(dizi[i]+" ");
+		}
+	}
+
+	public static void main(String[] args) {
+		// Küçükten büyüðe sýralama (Sorting Selection Algorithm)
+		
+		// 0 5 70 9 14 7
+		// 0 5 7 9 14 70
+		
+		int[] dizi = {5,70,9,140,3,74,0};
+		sirala(dizi, '>');
+		System.out.println("\n");
+		sirala(dizi, '<');
+		
+		
+		
+	}
+}
