@@ -1,0 +1,167 @@
+
+
+
+JAVA  ---  6.DERS
+19.10.19
+--------------------------
+
+
+# canExecute: dosyayý çalýþtýrma izni
+
+# canRead: dosya içeriðini okuma izni
+
+# canWrite: dosyaya yazma izni
+
+# createNewFile: yeni bir dosya oluþturma izni
+
+# delete: bir dosyayý ya da klasörü silmek için kullanýlýr
+
+# exists: bir konumdaki klasörün/dosyanýn cvar olup olmadýðýný sorgular
+
+# getAbsolutePath: dosyanýn lokasyonunu döner
+
+# getName: dosya ismi ve dosyaya ait uzantýyý döner
+
+# getPath: dosyanýn lokasyonunu döner
+
+# isDirectory: belirtilen lokasyon klasörse true, deðilse false döner
+
+# isFile: belirtilen lokasyon dosyaysa true, deðilse false döner
+
+# isHidden: belirtilen lokasyon gizliyse true, deðilse false döner
+
+# lastModified: son güncelleme zamanýný döner
+
+# lenght: dosya içeriðinin karakter uzunluðunu döner
+
+# lists: bir lokasyondaki dosya ve klasörlerin String[] olarak ismini döner
+
+# listFiles: bir lokasyondaki dosya ve klasörleri File[] olarak ismini döner
+
+# mkdir: Make Dir'in kýsaltmasýdýr. Bir klasör oluþturmak için kullanýlýr
+
+# renameTo: bir dosya ismini deðiþtirmek için kullanýlýr
+
+# # # # File dosya = new File(""); // çalýþmak istediðin lokasyonu belirtmek için kullanýlýr çift týrnak içindeki yer
+
+# 
+
+
+
+
+
+### File dosya = new File("D:/JAVA_DOSYA/javaprogramlama_1.txt"); // çalýþmak istediðin lokasyonu belirtmek için kullanýlýr çift týrnak içindeki yer
+		
+	
+		//BÝR DOSYA ÜRETMEK
+		try {
+			
+			boolean sonuc = dosya.createNewFile();
+			if(sonuc) {
+				System.out.println("Dosya oluþturuldu!");
+			}else {
+				System.out.println("Dosya oluþturulamadý!");
+			}
+			//javaprogramlama_1.txt 'yi bu kod üretir, yukardaki konumu belirtir
+			//try catch bloðuyla kullanman gerekiyor
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		
+
+--> bir dosya zaten varsa HATA VERÝR TEKRAR OLUÞTURMAZ, ya da eriþim iznin yoktur bu yüzden olupþturmaz
+
+
+### ayný metod birçok kez kulanýlabilir ama farklý iþlemler yapmalýdýr, parantez içinde gönderilen argümanlar birbirinden farklý olmak zorundadýr
+
+# 
+
+
+
+
+
+
+###########DOSYAYA YAZI YAZMA METODU  (ÖNEMLÝ)
+
+
+
+private static boolean dosyayaEkle(String konum, String yazi) {
+		boolean b = false;
+		try {
+			File dosya = new File(konum);
+			FileWriter yazici = new FileWriter(dosya,true);
+			BufferedWriter yaz = new BufferedWriter(yazici);
+			yaz.write(yazi);
+			yaz.close();
+			b = true;
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return b;
+	}
+	
+
+
+
+############# dosyayý oku ve yazdýr
+
+### fileinputstream okumak için  
+
+
+### fileoutputstream  yazmak için kullanýlýr
+
+public static String dosyayiOku(String konum) {
+		String str = "";
+		File f = new File(konum);
+		FileInputStream fis;
+		
+		try {
+			fis = new FileInputStream(f);
+			int ch = 0;
+			try {
+				while((ch=fis.read())!=-1) {
+					str += (char)ch;
+			}
+			}catch (IOException e) {
+				
+				e.printStackTrace();
+			}
+			
+			} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return str;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		
+			System.out.println(dosyayiOku("D:/JAVA_DOSYA/metin.txt"));
+		
+		
+	}
+
+
+
+
+
+
+################METODLAR
+
+
+# public,protectec,private: eriþim seviyesi
+
+# static:(public ve void arasýna sadece statici ekleyebiliriz)  (ayný class içerisinde metods ulaþmak için ikisinin de static olmasý gerek)
+
+# void: geri dönüþ tipi
+
+# main : metot ismi
+
+# (String[] args) : argüman listesi(imzasý) 
+
+# Metodlar iç içe yazýlamaz dikkat et, main'þn içine yazma
