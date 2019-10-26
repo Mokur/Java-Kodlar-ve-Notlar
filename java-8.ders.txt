@@ -1,0 +1,248 @@
+
+####### her sýnýfýn ne iþe yaradýðýný araþtýr
+
+
+#### haftaiçi grubunun 21-22-23 ne iþlediklerine bak incele
+
+
+
+
+JAVA --- 8.DERS
+26.10.19
+----------------------------------
+
+
+# Arrayliste istediðin kadar eleman ekleyip çýkartabilirsin, boyut belirtmene gerek yok
+
+# ArrayList<String> illerListe = new ArrayList<>;
+
+# 		 add() --> listeye eleman ekleemk içn kullanýlýr
+		 clear() --> listedeki tüm elemanlarý silmek için kullanýlýr
+		 get() --> indisini bildiðimiz elemaný çaðýrmak için kullanýlýr
+		 size() --> listenin eleman sayýsýný döner
+		 isEmpty() --> liste boþ ise true, doluysa false döner
+		 remove() --> indisini bildiðimiz elemaný silmek için kullanýlýr
+		 indexOf() --> ismini bildiðimiz elemanýn kaçýncý sýrada olduðunu belirtir. ilk bulduðu elemaný iþaret eder
+		 lastIndexOf() --> ismini bildiðimiz elemanýn kaçýncý sýrada olduðunu belirtir. son bulduðu elemaný iþaret eder
+		 iterator --> elemanlarý gezmek için kullanýlýr
+		 toArray() --> list'i diziye çevirmek için kullanýlýr
+		 equals() --> karþýlaþtýrmak için kullanýlýr
+		 contains() --> içermek/ listede bir elemanýn var olup olmadýðýný sorgulamakiçin kullanýlýr
+
+
+# alt+shift+s  --> generate getters and settersý getirir
+
+
+# kapsülleme: getter setter constructor boþ dolu 
+
+
+
+
+
+#################################  
+- put -> veri eklemek iiçn kullanýlýr
+- get -> belirtilen key'e sahip elemanýn value deðeri çaðýrmak için kullanýlýr
+- isEmpty -> hashmap boþ mu dolu mu sorgulamasý yapar
+- remove -> belirtilen key'deki tanýmlamayý kaldýrýr
+- size -> hashmap'in eleman sayýsýný döner
+- replace -> ismi belirtilen key'e ait deðer deðiþtirilebilir
+- containsKey -> bir anahtarýn varlýðýný sorgulamak için kullanýlýr
+- containsValue -> bir deðerin varlýðýný sorgulamak için kullanýlýr
+- values -> tüm value'larý döndürmek için kullanýlýr
+- keySet -> tüm keyleri döndürmek için kullanýlýr
+
+
+
+## linkedliste'e istenildiðinde en baþa da eleman eklenebiliyor, arrayliste sadece sona eklenir
+
+
+
+
+
+######### vector metotlarý
+
+- add/addElement - veri eklemek için
+- capacity
+- clear - deðerleri temizler
+- contains - listede deðer aramak için kullanýlýr
+- get - indisini bildiðimiz deðeri çaðýrmak için kullanýlýr
+  indexOf - ismini bildiðimiz deðerin indisini çaðýrmak için kullanýlýr (ilk)
+- lastIndexOf - ismini bildiðimiz deðerin indisini çaðýrma için kullanýlýr (son)
+- removeAllElements - tüm elemanlarý silmek için kullanýlýr
+- set - var olan deeðri deðiþtirmek için kullanýlýr 
+- remove  belirtilen indisteki/isimdeki elemaný silmek için kullanýlýr
+- size - vectorun elelman sayýsýný döner
+
+
+
+#  öðrenci sýnýfý ürettik
+
+
+
+## private string - boþ dolu constructor - get setler  --> sýralama bu þekilde
+
+
+public class Ogrenci {
+
+	
+	private String ogrenciAdSoyad;
+	private int dogumYili;
+	private int okulaBaslamaYili;
+	private String okul;
+	private String bolum;
+	private double notOrtalamasi;
+	private String email;
+	
+	public Ogrenci() {
+		
+	}
+	
+	
+	
+	
+	public Ogrenci(String ogrenciAdSoyad, int dogumYili, int okulaBaslamaYili, String okul, String bolum,
+			double notOrtalamasi, String email) {
+		super();
+		this.ogrenciAdSoyad = ogrenciAdSoyad;
+		this.dogumYili = dogumYili;
+		this.okulaBaslamaYili = okulaBaslamaYili;
+		this.okul = okul;
+		this.bolum = bolum;
+		this.notOrtalamasi = notOrtalamasi;
+		this.email = email;
+	}
+	
+	
+	
+	public String getOgrenciAdSoyad() {
+		return ogrenciAdSoyad;
+	}
+	public void setOgrenciAdSoyad(String ogrenciAdSoyad) {
+		this.ogrenciAdSoyad = ogrenciAdSoyad;
+	}
+	public int getDogumYili() {
+		return dogumYili;
+	}
+	public void setDogumYili(int dogumYili) {
+		this.dogumYili = dogumYili;
+	}
+	public int getOkulaBaslamaYili() {
+		return okulaBaslamaYili;
+	}
+	public void setOkulaBaslamaYili(int okulaBaslamaYili) {
+		this.okulaBaslamaYili = okulaBaslamaYili;
+	}
+	public String getOkul() {
+		return okul;
+	}
+	public void setOkul(String okul) {
+		this.okul = okul;
+	}
+	public String getBolum() {
+		return bolum;
+	}
+	public void setBolum(String bolum) {
+		this.bolum = bolum;
+	}
+	public double getNotOrtalamasi() {
+		return notOrtalamasi;
+	}
+	public void setNotOrtalamasi(double notOrtalamasi) {
+		this.notOrtalamasi = notOrtalamasi;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	
+}
+
+
+---> import java.util.ArrayList;
+
+public class ArrayList_Ornek6 {
+
+	public static void main(String[] args) {
+		
+		
+		ArrayList<Ogrenci> ogrenciler = new ArrayList<>();
+		
+		
+		ogrenciler.add(new Ogrenci(
+				"Ad Soyad",
+				1990,
+				2010,
+				"Ýstanbul Üniversitesi",
+				"Bilgisayar Programcýlýðý",
+				3.60d,
+				"email@gmail.com")
+				);
+
+	}   ---> öðrenci nesnesi üretmiþ olduk
+
+}
+
+
+
+
+
+# ArrayList<Ogrenci> ogrenciler = new ArrayList<>();
+		
+		//String ogrenciAdSoyad, int dogumYili, int okulaBaslamaYili, String okul, String bolum, double notOrtalamasi, String email
+		
+		ogrenciler.add(new Ogrenci(
+				"Ad Soyad",
+				1990,
+				2010,
+				"Ýstanbul Üniversitesi",
+				"Bilgisayar Programcýlýðý",
+				3.60d,
+				"email@gmail.com")
+				);
+		
+		
+		
+		ogrenciler.add(new Ogrenci(
+				"Merve Okur",
+				1996,
+				2017,
+				"Marmara Üniversitesi",
+				"Bilgisayar Programcýlýðý",
+				3.0d,
+				"merveokuur@gmail.com")
+				);
+		
+		
+		ogrenciler.add(new Ogrenci(
+				"Emre Hýz",
+				1996,
+				2017,
+				"Marmara Üniversitesi",
+				"Bilgisayar Programcýlýðý",
+				2.0d,
+				"emrehiz@gmail.com")
+				);
+		
+		
+		for (Ogrenci ogrenci : ogrenciler) {
+			System.out.println(ogrenci.getOgrenciAdSoyad());
+		}
+		
+ ----> ogrenci nesnesinin get metodlarýna ulaþýp getirebiliyoruz ekrana
+
+
+
+
+# @Override
+	public String toString() {
+		return "Ogrenci [ogrenciAdSoyad=" + ogrenciAdSoyad + ", dogumYili=" + dogumYili + ", okulaBaslamaYili="
+				+ okulaBaslamaYili + ", okul=" + okul + ", bolum=" + bolum + ", notOrtalamasi=" + notOrtalamasi
+				+ ", email=" + email + "]";
+	}   
+
+
+
+
