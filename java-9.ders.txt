@@ -1,0 +1,196 @@
+
+
+JAVA  ---  9.DERS
+27.10.19
+-------------------------------------
+
+
+OOP (Object Oriented Programming)
+
+OOP Ýlkeleri:
+
+- Kapsülleme (Encapsulation)
+- Soyutlama (Abstraction)
+- Çok Biçimlilik (Polymorhism)
+- Kalýtým (Inheritance)
+
+*
+this
+super
+metot kavramý
+class kavramý ve nesne üretmek
+
+OOP Saðladýðý Avantajlar
+- Kod karmaþýklýðýndan bizi kurtarýr (Düzen saðlar)
+- Güvenli uygulama geliþtirmeyi saðlar
+- Kod okunurluðunu arttýrýr
+- Grup çalýþmasýnda kolaylýk saðlar
+
+
+
+### Encapsulation(Kapsülleme Ýlkesi Kurallarý)
+ 	
+ 	1- Deðiþkenlerin private eriþim seviyesinde tanýmlanmasý
+ 	2- boþ ve dolu constructorlar üretilmesi
+ 	3- her bir deðiþken için get ve set metotlarý üretilmesi
+ 	
+ 	- constructor: classla birebir ayný isme sahip olan geri dönüþ tipleri olmayan metot ismidir
+ 	- bir sýnýfýn boþ ya da dolu constructorlarý olabilir
+ 	- eðer bir dolu constructor üretirseniz boþ constructor üretmeniz önerilir.
+ 	- constructor yapýcý metot demektir. 
+ 	
+ 	+ Yapýcý Metodun Saðladýðý Avantajlar: 
+ 	- Bir nesne üretilirken örneðin: Kedi kedi = new Kedi(); diyerek bir nesne üretmiþ oluruz. (* Kedi()--> boþ constructor, içi dolu olsaydý dolu constructor olurdu)
+ 	Eðer parantez içerisi boþ ise boþ constructor, dolu se dolu constructor çaðýrmýþ oluruz.
+ 	
+ 	- Dolu constructor'ýn bize saðlamýþ olduðu avantaj, nesnenin üretilmesi esnasýndabir iþlem gerçekleþtirmek için kullanabilceðimiz metottur
+ 	- yapýcý constructor, nesnenin üretilmesi zamanýnda çalýþýr.
+ 	
+ 	- dolu constructor seviyesinde belirttiðimiz parametreler sayesind, ürettiðimiz sýnýfýn içerisinde bulunan private fieldlarýn(deðiþken) 
+ 	 deðerini nesne üretilmesi zamanýnda tek satýrda doldurabiliriz. 
+ 	 
+ 	 - eðer dolu constructor üretmemiþ olsaydýk ilgili nesneye ait deðer atamasý yapamazdýk. Ýlgili deðiþkene ait deðer atamasýný setter metot üreterek yapmamýz gerekir.
+ 	 eðer ilgili deðiþkene ait set metot da üretilmemiþse ve o deðiþken private olarak tanýmlanmýþ ise hiçbir þekilde o deðiþkene varsayýlan deðer atamasý yapýlamazdý.
+  
+
+--------------------------------------------------
+
+
+### nesne oluþturmak;
+
+
+public class Cicek {
+	
+	
+	//her deðiþkenin private olarak tanýmlanmasý
+	private String isim;
+	private String renk;
+	private String cins;
+	private String yetistigiBolge;
+	private boolean kokuluMu;
+	private boolean dikenliMi;
+	private boolean saksidaMi;
+	private double enFazlaYukseklik;
+	
+	
+	//boþ constructor
+	public Cicek() {
+		
+	}
+	
+	
+	//dolu constructor
+	public Cicek(String isim,String renk,String cins,String yetistigiBolge,boolean kokuluMu,boolean dikenliMi,boolean saksidaMi,double enFazlaYukseklik ) {
+		//this--> bu sýnýfýn içindeki demek
+		this.isim = isim;  //global alandaki (baþýnda private olan kkýsým) isim deðiþkenine bu argümandan gelen isimi atamýþ oluyoruz
+		this.renk = renk;
+		this.cins = cins;
+		this.yetistigiBolge = yetistigiBolge;
+		this.kokuluMu = kokuluMu;
+		this.dikenliMi = dikenliMi;
+		this.saksidaMi = saksidaMi;
+		this.enFazlaYukseklik = enFazlaYukseklik;
+		
+	}
+
+}
+
+
+
+
+## get metotlar(getter) deðiþken deðerlerini çaðýrmak için kullanýlýr
+## set metotlar(setter) deiþken deðeri atamak için kullanýlýr
+
+
+
+
+### getter setter;
+
+
+public String getIsim() {
+		return isim;
+	}
+
+
+	public void setIsim(String isim) {
+		this.isim = isim;
+	}
+
+
+	public String getRenk() {
+		return renk;
+	}
+
+
+	public void setRenk(String renk) {
+		this.renk = renk;
+	}
+
+
+	public String getCins() {
+		return cins;
+	}
+
+
+	public void setCins(String cins) {
+		this.cins = cins;
+	}
+
+
+	public String getYetistigiBolge() {
+		return yetistigiBolge;
+	}
+
+
+	public void setYetistigiBolge(String yetistigiBolge) {
+		this.yetistigiBolge = yetistigiBolge;
+	}
+
+
+	public boolean isKokuluMu() {
+		return kokuluMu;
+	}
+
+
+	public void setKokuluMu(boolean kokuluMu) {
+		this.kokuluMu = kokuluMu;
+	}
+
+
+	public boolean isDikenliMi() {
+		return dikenliMi;
+	}
+
+
+	public void setDikenliMi(boolean dikenliMi) {
+		this.dikenliMi = dikenliMi;
+	}
+
+
+	public boolean isSaksidaMi() {
+		return saksidaMi;
+	}
+
+
+	public void setSaksidaMi(boolean saksidaMi) {
+		this.saksidaMi = saksidaMi;
+	}
+
+
+	public double getEnFazlaYukseklik() {
+		return enFazlaYukseklik;
+	}
+
+
+	public void setEnFazlaYukseklik(double enFazlaYukseklik) {
+		this.enFazlaYukseklik = enFazlaYukseklik;
+	}
+	
+	
+
+
+
+## baþka sýnýf içerisinde newleme yaparken try catch bloðu içerisinde yazman gerekir
+
+
+## 
