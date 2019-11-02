@@ -1,0 +1,61 @@
+
+
+
+
+
+JAVA  ---  10.DERS
+02.11.19
+----------------------------------
+
+# ÝLÝÞKÝSEL VERÝTABANI <-- ARAÞTIR
+-Birebir iliþki
+-Bire Çok Ýliþki
+-Çoða Çok Ýliþki
+
+# RDBMS (VERÝTABANI YÖNETÝM SÝSTEMÝ)
+
+# public class Insan extends Adem   --> Adem sýnýfýndan türetmiþ olduk Insan classýný
+
+# super kelimesi miras alýnan üst sýnýfý temsil eder.
+		//super, diyerek üst sýnýftaki deðiþken ve metotlara eriþim saðlayabiliriz
+		//super();  -  ifadesi üst sýnýfýn boþ constructor'ýna denk gelir.
+
+
+
+#  /*
+		  OOP - Inheritance (Kalýtým) Ýle Alakalý Notlar:
+		  Bir sýnýfýn farklý bir sýnýftan miras alabilmesi için kalýtým iþlemi yapýlmasý gerekir.
+		  Kalýtým yapabilmek için, hangi sýnýfýn farklý bir sýnýftan miras almasý gerektiðini bilmemiz gerekir. 
+		  Ýlgili sýnýfta miras alýnacak sýnýfý belirtmek için extends kelimesi kullanýlýr.
+		  
+		  Örn: public class Kedi extends Kedigiller
+		  
+		  Kural: extends kelimesinden sonra, sadece 1 adet sýnýf ismi belirtilir.
+		  
+		  
+		  ---------
+		  
+		  
+		  Inheritance'ýn farklý bir özelliði ise, Metot Override iþlemidir
+		  
+		  Metot Override, hem üst sýnýfta bulunup hem de çaðýrýlan sýnýf içerisinde ayný metot ismi bulunabilir, bu iþleme metot override(ezme)
+		  iþlemi denir.
+		  
+		  Yani Insan sýnýfýndaki konus metodu üretilmeseydi ve Insan sýnýfý Adem sýnýfýndan türetildiðinde Adem sýnfýýnda konuþ metodu varsa;
+		   - Adem sýnýfýndaki konus metodu içeriðinde tanýmlanan kodlar çalýþacaktý.
+		  
+		  Ayný metodu Insan sýnýfýna da eklersek Metot Override iþlemi yapmýþ oluruz.
+		   - Yani metot Adem gibi konuþmasýn, Insan gibi konussun diyebiliriz.
+		   - Üst sýnýftaki metodun aynýsýný, kullanacaðýmýz sýnýfta da tanýmlayýp içeriðini deðiþtirme iþlemine Metot Override iþlemi denir.
+		   
+		   
+		   Kalýtýmýn 3 temel bilinmesi gereken anahtar kelimeleri þöyledir;
+		    - extends
+		    - Metot Override
+		    - super() 
+		    
+		    
+		    Hangi sýnýfa extends edersek bulunduðumuz sýnýfta o sýnýfýn metotlarý yazýlmýþ gibi görülür.
+		  
+		  
+		 */
