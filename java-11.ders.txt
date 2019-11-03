@@ -1,0 +1,77 @@
+
+
+
+
+
+JAVA  --- 11.DERS
+03.11.19
+---------------------------------
+
+# extends'ten sonra
+- Encapsulation(Kapsülleme)
+-- Deðiþkenlerin private eriþim seviyesinde kullanýlmasý
+-- Boþ ve dolu constructorlar üretilmesi
+-- Her bir deðiþken için get ve set metotlarý üretilmesi
+-- this kelimesinin önemi
+-- Metot overloading iþlemi
+--- Ayný isimde farklý imzalarda metotlar üretilmesi veya dolu constructorlar
+
+
+- Inheritance (Kalýtým)
+-- super kelimesinin önemi
+-- extends kelimesinin önemi
+-- metot override iþlemi
+
+
+- Abstraction (Soyutlama)
+-- Bir sýnýfýn doðrudan newleyerek üretilmesini engeller. Yani Araba araba = new Araba(); þeklinde tanýmlanmasýnýn önüne geçer
+-- Bir sýnýfa doðrudan nesneyi üreterek deðil, farklý bir sýnýf üzerinden dolaylý yoldan üretilmesini saðlar
+-- Araba araba = new Kamyon(); - ile üretilebilmesine izin verir. Ama buradaki kural new kelimesinden sonra belirtilen sýnýfýn
+ eþitlik öncesindeki sýnýf isminden türemesi gerekir.
+
+-- abstract kelimesinin önemi
+-- abstract metot
+
+-- Eðer bir sýnýf abstract ise, o sýnýf doðrudan newleme yapýlarak üretilemez. Dolaylý yoldan kalýtým yoluylar farklý bir sýnýf 
+üzerinden üretilebilir.
+
+
+- Abstract AVantajlarý:
+-- Abstract kelimesinin farklý bir kullaným yöntemi ise, abstract metot kullanmaktýr. Bir abstract metot üretmek istiyorsak metodun ve sýnýfýn 
+abstract olmasý þarttýr. Abstract metotar ilgili sýnýfýn farklý bir sýnýf üzerinde extends edilmesiyle override edilme zorunluluðu bulunur.
+
+
+-- Abstact sýnýfýn, abstract metodu farklý bir sýnýf üzerinde extends ile sýnýf ismi belirtildiðinde
+doðrudan sýnýf oluþturulamaz. Sýnýfýn üretilmesi zamanýnda abstract sýnýfýn abstract metodu override edilerek 
+içeriðinin doldurulmasý beklenir.
+	 
+-----------
+
+
+-- Abstract sýnýf içerisindeki abstract metotlarýn scopelarý(kod bloðu) yoktur
+	 
+-- Abstract metot ilgili sýnýfta, override edilme zorunluluðu bulunan metotlar manasýna gelir.
+	 
+-- Abstract metotlar çaðrýldýðý sýnýf ieçirisnde nasýl çalýþacaðý tanýmlanýr
+
+-- Eðer bir abstract metot üretmek istiyorsak ilgili sýnýfýn da abstract olmasý gerekir
+
+
+
+- Polymorphism (Çok Biçimlilik)
+-- Interface kavramýnýn önemi
+-- implements kelimesinin önemi
+-- 
+
+
+//interface'te içerisinde kodlarý tamamen yazamayýz, sadece durumlarý temsil ederiz.
+	/*
+	 Metotlarýn scope'larý bulunamaz, sadece metotlarýn argümanlarý olabilir.
+	 
+	 Interface'ler çaðrýldýklarý yerde metot içeriklerinin tanýmlanma zorunluluðu bulunur.
+	 
+	 Bir interface'i bir sýnýf içerisinde çaðýrmak istersek class açýlýþ  scope'unun önüne yani
+	 süslü parantez aöýlýþýnýn önüne, implements kelimesi eklendikten sonra istediðimiz kadar 
+	 interface'i virgüller ile ayýrýptanýmlayabiliriz.
+	 
+	 Ýlgili sýnýf içerisinde interface'in metotlarý, override edilmek zorundadýr.
