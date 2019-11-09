@@ -1,0 +1,155 @@
+
+
+
+#### javatpoint sqlite incele gel
+
+
+
+JAVA  ---  12.DERS
+09.11.19 - Cumartesi
+-----------------------------------
+
+
+- VERÝTABANI SÝSTEMLERÝ -
+- MSSQL Server (Microsoft SQL Server/Windows)
+
+- MYSQL Server (Ücretsiz/Açýk Kaynaklý/Platform Baðýmsýz)
+-- MYSQL Workbench (Editör Yazýlým)
+-- XAMPP/WAMP/LAMPP -> phpMyAdmin nedir?
+
+- NOSQL
+
+- SQLite Database (Ücretsiz/Açýk Kaynaklý/Platform Baðýmsýz)
+-- Local Database/ Yerel veritabaný
+
+-- Uygulamanýn kurulduðu bilgisayar üzerinde ilgili ürettiðimiz yazýlýmda ek bir kurulum gerektirmeden 
+veritabaný çözümü ihtiyacýmýz olursa SQLite Database kullanabiliriz
+
+-- Portable/Taþýnabilir
+
+-- Veritabaný sistemi dosya okuma ve yazma üzerine inþa edilmiþtir
+
+-- Açýk kaynaklý ve iþletim sistemi baðýmsýzlýðý olduðu için birçok yazýlým dilinde kullanýlabilir.
+--- Örn: en popüler olarak; Android Programlamada SQLite DB kullanýlmasý, 
+--- IOS Programlamada SQLite DB kullanýlmasý,
+--- Python programlamada SQLite DB kullanýlmasý,
+--- PHP programlamada SQLite DB kullanýlmasý,
+--- C# programlamada SQLite DB kullanýlmasý
+
+-- SQLite database hýzlý çalýþýr. Çünkü küçük çaplý projeler için tercih ederiz. 
+Kurumsal yazýlýmlar için, büyük çaplý yazýlýmlar tercih edilir. (MYSQL, MSSQL, MONGODB vs.)
+
+-- Ýnternet gerektirmeden lokal ortamda yani kiþisel bilgisayarlarda yazýlýp kullanýlabilecek uygulamalarda tercih edilir
+
+-- Örn: Not Defteri, Telefon Rehberi, Günlük, Bütçe Hesap Uygulamalarý, 
+
+-- SQLite Database, eskiden Microsoft Office Paketi içerisinde bulunan Access Database Mantýðýnda çalýþtýðý söylenebilir
+
+-- SQLite Database üzerindeki Tablo,Kolon,Satýr verileri harici yazýlýmlar sayesinde de yazýlým dili içerisinde sorgular yapmadan da görülebilmektedir.
+
+-- SQLite Database için en kulanýþlý popüler bir yazýlým olan DB Browser for SQLite yazýlýmý, SQLite editör olarak kullanýlmaktadýr
+
+-- https://sqlitebrowser.org/  --> adresinden indirilip kurulmasý gerekir
+
+-- https://bitbucket.org/xerial/sqlite-jdbc/downloads/   --> sqlite ile ilgili dosyalarý burdan indirebilirsin
+--- sqlite-jdbc-3.27.2.1.jar
+
+
+
+
+
+
+TEMEL VERÝTABANI SORGULARI
+---------------------------------------
+
+
+	CRUD (Create,Read,Update,Delete)
+
+		
+	C  --> CREATE Table, Database Insert 
+
+	R  --> READ (Okuma Ýþlemleri / Select)
+
+	U  --> UPDATE (Güncelleme Ýþlemleri)
+
+	D  --> Delete (Silme Ýþlemleri)
+
+
+
+
+
+# Primary Key'in Önemi
+- Bir veritabaný tablosu içerisinde bulunan satýrlarýn birbirlerinden farklý olduklarýný ifade edebilmek için bir tabloda ilgili 
+bir kolonun primary ey üretilmesi gerekir.(Primary key deðeri tekrar edilemeyecek bir deðere sahip olmasý gerekir.)
+
+- Primary key ile eþ zamanlý olarak kullanabileceðimiz bir deðer ise, auto increment kelimesidir.
+
+- Auto Increment bir int kolonun deðerinin sürekli artabilmesini saðlayan özelliktir.
+
+- Primary key auto increment ile birlikte kullanýldýðý zaman, zaten deðerin tekrarlanmayacaðý bilindiðinden auto increment ile eklenen satýr deðerinin
+primary key olan kolon deðerine +1 ilave edilmesidir.
+
+- Primary key ifadesi satýrlarýn benzersiz id(int) deðerlerine sahip olmasý dolayýsýyla, eriþmek istediðimiz ve iþlem gerçekleþtirmek istediðimiz id'sini 
+bildiðimiz kolona eriþmemizi kolaylaþtýrýr.
+
+
+SELECT, UPDATE, INSERT, DELETE
+- Yani: id'si 5 olan satýrý göster (select), 
+id'si 70 olan satýrý sil (delete),
+id'si 9 olan satýrýn ad kolon deðerini, belirttiðim yeni deðer ile deðiþtir (update),
+ilgili tablonun yeni bir satýr verisine sahip olabilmesi için (insert)
+
+- Bir tabloda primary key ifadesi 1 defa bulunabilir, auto increment ifadesi ise primary key'e baðýmlý çalýþacaðý için o da ilgili tabloda 1 adet eklenebilir.
+
+
+
+# Unique ifadesi(Benzersiz)
+
+- Bir kolonu unique yaparsanýz o kolon deðeri, yeni eklenecek deðer içerisinde olamaz. Yani veri eklenemez ve eklemek isteen kiþiye hata metni iletir.
+
+- Örn: email adresi benzersiz kolon ise, o email adresinden tekrar ilgili tabloya kayýt eklenemez.
+
+
+
+TEMEL SORGULAR
+
+- SELECT
+-- select *from Rehber (Rehber tablosundaki tüm kolonlarý ve satýrlarý getirir)
+-- select id,ad,soyad from Rehber (Rehber tablosundaki sadece belirttiðimiz kolonlarýn deðerlerini listeler.)
+-- SELECT *FROM Rehber where id=5  (Rehber tablosundaki id'si 5 olan satýrý getirir)
+-- SELECT *FROM Rehber where ad="AD1"  (Rehber tablosuda adý AD1 olan deðere sahip olanlarý getir)
+-- SELECT *FROM Rehber where ad like "AD%"  (ad kolonu deðeri Ad ifadesi ile baþþlayanlarý listeleme) 
+-- SELECT *FROM Rehber where ad like "%AD"  (ad kolonu deðeri Ad ifadesi ile bitenleri listeleme)
+-- SELECT *FROM Rehber limit 3  (rehber tablosundaki ilk 3 satýrý listeler)
+-- SELECT *FROM Rehber order by id DESC limit 3  (id'ye göre son 3 elemaný sýrala)
+-- SELECT *FROM Rehber order by id ASC limit 3  (id'ye göre ilk 3 elemaný sýrala)
+
+
+
+-DELETE 
+-- delete from Rehber where id=3  (id'si 3 olan deðeri sildik)
+-- delete from Rehber where ad="AD1"  (ad kolon deðeri AD1 olan satýrlarý sil)
+-- delete from Rehber  (Rehber tablosundaki tüm satýrlarý siler)
+
+-DROP 
+-- drop database DatabaseName (DatabaseName ismine sahip veritabanýný tamamen siler)
+-- drop table Rehber  (Rehber tablosunu siler)
+
+-CREATE
+
+
+CREATE TABLE "Rehber" (
+	"id"	INTEGER PRIMARY KEY AUTOINCREMENT,
+	"telefon_no"	VARCHAR(11),
+	"ad"	VARCHAR(75),
+	"soyad"	VARCHAR(75),
+	"adres"	VARCHAR,
+	"email"	VARCHAR(90)
+);
+
+
+-- Create Table ile baþlayan ifadeler tablo üretir
+-- create database DatabaseName  (DatabaseName isminde veritabaný üretir)
+
+
+
