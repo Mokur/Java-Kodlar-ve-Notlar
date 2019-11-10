@@ -1,0 +1,24 @@
+
+### mysql'de crud sorgularý nasýl yapýlýyor araþtýr gel
+
+
+
+JAVA  ---  13.DERS
+10.11.19 - PAZAR
+----------------------------------
+
+
+- INSERT
+-- Ýlgili tabloya satýr verisi eklemek için kulanýlýr
+-- insert into Rehber (telefon_no,ad,soyad,adres,email) values ('0123 111 12 15','isim','soyisim','adres','email')
+-- insert into kelimesinden sonra tablo ismi belirtilir ardýndan parantez açýp kapatýlýr. O parantezin içerisine deðer girmek istediðimiz 
+kolonlarýn isimleri yazýlýr, parantez kapanýþý sonrasýnda values kelimesi yazýlýr ve yine parantez açýlýp kapatýlýr. Ýlgili açýlan parantezin
+içerisine ise, values öncesinde açýlan parantezin içinde belirtilen kolonlara ait ilgili tipte sýralý olarak deðerlerin girilmesi beklenir.
+
+- UPDATE
+-- update Rehber set ad="þerif", soyad="güngör" where id=4
+-- update isminden sonra tablo ismi belirtilir. Tablo isminden sonra set kelimesi kullanýlýr.
+set kelimesinden sonra deðerlerini deðiþtirmek istediðimiz kolon isimleri ve atamasý yapýlacak deðer þeklinde tanýmlanýr.
+Birden fazla kolon deðeri deðiþtirilecek ise, ilgili kolonlar ve deðerleri belirtildikten sonra virgüller ile ayrýlabilir. 
+Kolon deðer deðiþtirme belirtildikten sonra where kelimesi kullanýlarak bu güncelleme iþleminin neye göre gerçekleþeceði belirtilir.
+-- update Rehber set adres="Fatih/Ýstanbul" where email="contact@serifgungor.com"
